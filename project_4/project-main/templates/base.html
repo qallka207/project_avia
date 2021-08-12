@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Рабочий cайт турагента</title>
+	<style>
+		a {color: blue;
+		   font-weight: bold;}
+	</style>
+</head>
+    {% set fon = "/static/img/Fon.jpg" %}
+	<body style="background:url({{fon}}) no-repeat center center fixed; background-size: cover; ">
+
+		<nav class="navbar navbar-default" style="background-color: white; display: flex; justify-content: center; margin-bottom: 0px;">
+		  <ul class="nav navbar-nav">
+			<li><a href="/best">Лучшие предложения</a></li>
+			<li><a href="/find">Поиск туров</a></li>
+			<li><a href="/popular">Популярные туроператоры</a></li>
+		  </ul>
+		</nav>
+
+		<main role="main" class="container">
+
+
+			{% block content %}{% endblock %}
+
+
+		</main>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="background: #CDD6DB; opacity: .91; color: #000000; padding: 10px 30px">
+	<p style="text-align: center; font-size: 30px; padding-top: 20px"><b>Лучшие предложения</b></p>
+	
+	<div style="display: flex; justify-content: center;">
+    <table style="border-collapse: collapse; border-spacing: 4px; color: #000000; width: 80%;">
+		{% for item in tours%}
+		{% if item['tours'] != [] %}
+		<tr>
+			<td style="padding: 20px 0 10px 15px; font-size: 20px"><b>{{item['country']}}</b></td>
+		</tr>
+		{% for i in item['tours']%}
+		<tr>
+			<td style="padding: 10px 15px; border: 1px solid #070a08;">{{i['name']}}</td>
+			<td style="padding: 10px 15px; border: 1px solid #070a08; width: 50%">{{i['info']}}</td>
+			<td style="padding: 10px 15px; border: 1px solid #070a08; width: 150px;">{{i['price']}}</td>
+		</tr>   
+		{% endfor %}{% endif %}{% endfor %}
+	</table>
+    </div>
+	
+	
+</div>
+
+
+{% endblock %}

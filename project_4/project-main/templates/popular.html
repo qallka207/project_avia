@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style=" background: #CDD6DB; opacity: .91; color: #000000; padding: 10px 30px">
+	<p style="text-align: center; font-size: 30px; padding: 20px"><b>Популярные туроператоры</b></p>
+	<p style="text-align: justify">Самые популярные официальные туроператоры от которых обычно покупают туры большинство людей. Только качество, только надёжные туроператоры, которые предоставляют как отличные цены, так и гарантируют Вам то, что Ваш отдых пройдёт безупречно. Выберите одного из туроператоров!</p>
+		
+	
+    <table style="margin: 0 auto;">
+	  <tr>
+		<td style="width: 50%; padding: 10px 70px;">
+	      <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image001.png" %}
+			<img src={{img}}>
+			<a href="https://pegast.ru/pegasys/search" target="_blank" style="padding-left: 10px">Пегас Туристик</a>
+		  </div>
+		</td>
+		<td style="width: 50%; padding: 10px 70px;">
+    	  <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image002.png" %}
+			<img src={{img}}>
+			<a href="https://www.bgoperator.ru/" target="_blank" style="padding-left: 10px">Библио Глобус</a>
+    	  </div>
+		</td>
+	  </tr>
+	  
+	  <tr>
+		<td style="width: 50%; padding: 10px 70px;">
+	      <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image003.png" %}
+			<img src={{img}}>
+			<a href="https://www.tui.ru/" target="_blank" style="padding-left: 10px">Туи</a>
+		  </div>
+		</td>
+		<td style="width: 50%; padding: 10px 70px;">
+    	  <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image004.png" %}
+			<img src={{img}}>
+			<a href="https://www.anextour.com/" target="_blank" style="padding-left: 10px">Анекс Тур</a>
+    	  </div>
+		</td>
+	  </tr>
+	  
+	  <tr>
+		<td style="width: 50%; padding: 10px 70px;">
+	      <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image005.png" %}
+			<img src={{img}}>
+			<a href="https://www.tez-tour.com/ru/ufa/?lang=ru&city=msk" target="_blank" style="padding-left: 10px">Тез Тур</a>
+		  </div>
+		</td>
+		<td style="width: 50%; padding: 10px 70px;">
+    	  <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image006.png" %}
+			<img src={{img}}>
+			<a href="https://intourist.ru/" target="_blank" style="padding-left: 10px">Интурист</a>
+    	  </div>
+		</td>
+	  </tr>
+	  
+	  <tr>
+		<td style="width: 50%; padding: 10px 70px;">
+	      <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image007.png" %}
+			<img src={{img}}>
+			<a href="https://poisk-tour.com/search.html" target="_blank" style="padding-left: 10px">Корал Тревел</a>
+		  </div>
+		</td>
+		<td style="width: 50%; padding: 10px 70px;">
+    	  <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image008.png" %}
+			<img src={{img}}>
+			<a href="http://www.sunmar-agent.ru/poisk-tura" target="_blank" style="padding-left: 10px">Санмар</a>
+    	  </div>
+		</td>
+	  </tr>
+	  
+	  <tr>
+		<td style="width: 50%; padding: 10px 70px;">
+	      <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image009.png" %}
+			<img src={{img}}>
+			<a href="https://alean.onlinetours.ru/" target="_blank" style="padding-left: 10px">Алеан</a>
+		  </div>
+		</td>
+		<td style="width: 50%; padding: 10px 70px;">
+    	  <div style="display: flex; align-items: center;">
+			{% set img = "/static/img/image010.png" %}
+			<img src={{img}}>
+			<a href="https://www.mouzenidis-travel.ru/" target="_blank" style="padding-left: 10px">Музенидис Трэвел</a>
+    	  </div>
+		</td>
+	  </tr>
+	</table>
+	
+	
+	
+</div >
+
+
+
+{% endblock %}

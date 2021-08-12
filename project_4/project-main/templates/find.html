@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form style="background: #CDD6DB; opacity: .91; color: #000000;" method="post">
+	<div  style="display: flex; justify-content: space-evenly; height: 100%; ">
+
+		<div class="jumbotron" style="display: flex; flex-direction: column;  padding: 40px 30px;">
+			  <label>Откуда</label>
+			  <select name="otkuda">
+				<option
+					{% if ot == "Россия" %}
+					selected
+					{% endif %}
+					>Россия</option>
+				<option
+					{% if ot == "Украина" %}
+					selected
+					{% endif %}
+					>Украина</option>
+				<option
+					{% if ot == "Беларусь" %}
+					selected
+					{% endif %}
+					>Беларусь</option>
+			  </select>
+		</div>
+		<div class="jumbotron" style="display: flex; flex-direction: column;  padding: 40px 40px;">
+			  <label>Куда</label>
+			  <select name="kuda">
+				<option
+					{% if ku == "Без разницы" %}
+					selected
+					{% endif %}
+					>Без разницы</option>
+				<option
+					{% if ku == "Греция" %}
+					selected
+					{% endif %}
+					>Греция</option>
+				<option
+					{% if ku == "Египет" %}
+					selected
+					{% endif %}
+					>Египет</option>
+				<option
+					{% if ku == "Италия" %}
+					selected
+					{% endif %}
+					>Италия</option>
+				<option
+					{% if ku == "Испания" %}
+					selected
+					{% endif %}
+					>Испания</option>
+				<option
+					{% if ku == "Мальдивы" %}
+					selected
+					{% endif %}
+					>Мальдивы</option>
+				<option
+					{% if ku == "Россия" %}
+					selected
+					{% endif %}
+					>Россия</option>
+				<option
+					{% if ku == "Тайланд" %}
+					selected
+					{% endif %}
+					>Тайланд</option>
+				<option
+					{% if ku == "Франция" %}
+					selected
+					{% endif %}
+					>Франция</option>
+			  </select>
+		</div>
+		<div class="jumbotron" style="display: flex; flex-direction: column;  padding: 20px;">
+			  <label>Количество дней</label>
+			  <label style="font-weight: normal;">От <input name="dni1" type="text"
+					{% if d1 != "" %}
+					value = {{d1}}
+					{% endif %}
+			  ></label>
+			  <label style="font-weight: normal;">До <input name="dni2" type="text"
+					{% if d2 != "" %}
+					value = {{d2}}
+					{% endif %}
+			  ></label>
+		</div>
+		<div class="jumbotron" style="display: flex; flex-direction: column;  padding: 20px;">
+			  <label>Диапазон даты заезда</label>
+			  <label style="font-weight: normal;">От <input name="data1" type="date"
+					{% if dat1 != "" %}
+					value = {{dat1}}
+					{% endif %}
+			  ></label>
+			  <label style="font-weight: normal;">До <input name="data2" type="date"
+					{% if dat2 != "" %}
+					value = {{dat2}}
+					{% endif %}
+			  ></label>
+		</div>
+	</div >
+
+
+	<div  style="display: flex; justify-content: space-evenly; height: 100%; ">
+
+		<div class="jumbotron" style="display: flex; flex-direction: column;  padding: 40px 40px;">
+			  <label>Уровень</label>
+			  <select name="level">
+				<option
+					{% if lev == "Любой" %}
+					selected
+					{% endif %}
+					>Любой</option>
+				<option
+					{% if lev == "***" %}
+					selected
+					{% endif %}
+					>***</option>
+				<option
+					{% if lev == "****" %}
+					selected
+					{% endif %}
+					>****</option>
+				<option
+					{% if lev == "*****" %}
+					selected
+					{% endif %}
+					>*****</option>
+			  </select>
+		</div>
+		<div class="jumbotron" style="display: flex; flex-direction: column;  padding: 40px 20px;">
+			  <label>Тип питания</label>
+			  <select name="pitanie">
+				<option
+					{% if pit == "Любой" %}
+					selected
+					{% endif %}
+					>Любой</option>
+				<option
+					{% if pit == "Без питания" %}
+					selected
+					{% endif %}
+					>Без питания</option>
+				<option
+					{% if pit == "Только завтраки" %}
+					selected
+					{% endif %}
+					>Только завтраки</option>
+				<option
+					{% if pit == "Затрак, ужин" %}
+					selected
+					{% endif %}
+					>Затрак, ужин</option>
+				<option
+					{% if pit == "Затрак, обед, ужин" %}
+					selected
+					{% endif %}
+					>Затрак, обед, ужин</option>
+				<option
+					{% if pit == "Все включено" %}
+					selected
+					{% endif %}
+					>Все включено</option>
+			  </select>
+		</div>
+		<div class="jumbotron" style="display: flex; flex-direction: column;  padding: 20px;">
+			  <label>Стоимость на человека</label>
+			  <label style="font-weight: normal;">От <input name="cena1" type="text"
+					{% if st1 != "" %}
+					value = {{st1}}
+					{% endif %}
+			  ></label>
+			  <label style="font-weight: normal;">До <input name="cena2" type="text"
+					{% if st2 != "" %}
+					value = {{st2}}
+					{% endif %}
+			  ></label>
+		</div>
+		<div  style="display: flex; flex-direction: column;  padding: 45px 63px;">
+
+			  <button style="padding: 8px 20px;">Найти</button>
+
+		</div>
+	</div >
+</form >
+
+
+<div  style="background: #CDD6DB; opacity: .9; margin-top: 30px;">
+	{% if pos == 1 %}
+
+		<table style="border-collapse: separate; border-spacing: 4px; color: #000000; width: 100%;">
+		  <tr>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Откуда</th>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Куда</th>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Дата</th>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Дней</th>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Отель</th>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Уровень</th>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Питание</th>
+			<th scope="col" style="border: 1px solid #070a08; padding: 10px 15px;">Стоимость</th>
+		  </tr>
+		  {% for item in tyrs%}
+		  <tr>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Otkuda}}</td>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Kuda}}</td>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Data}}</td>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Dni}}</td>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Hotel}}</td>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Level}}</td>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Pitanie}}</td>
+			<td style="border: 1px solid #070a08; padding: 10px 15px;">{{item.Cena}}</td>
+		  </tr>
+		  {% endfor %}
+		</table>
+
+	{% endif %}
+</div >
+
+
+
+{% endblock %}ml>
